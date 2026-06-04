@@ -6,14 +6,17 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { getHistory, clearHistory } from "@/lib/history"
 
-// Both modes take natural language — the embedding model is trained on it, and
-// it retrieves better than bare keywords.
+// The embedding model is trained on natural-language questions (SimpleQA-style),
+// which retrieve the target page most precisely — Ask mode leans on that. The
+// search grid deliberately uses bare, slightly ambiguous titles instead: "The
+// Starry Night" fans out to Van Gogh + Munch + Millet + the Dutch Sterrennacht,
+// a far more striking visual spread than one painting repeated five times.
 const EXAMPLE_QUERIES = [
-  "What does Van Gogh's The Starry Night look like?",
-  "How is the periodic table laid out?",
-  "What does the Taj Mahal look like?",
-  "What is depicted in The Great Wave off Kanagawa?",
-  "兵马俑长什么样？",
+  "The Starry Night",
+  "Periodic table",
+  "Taj Mahal",
+  "The Great Wave off Kanagawa",
+  "兵马俑",
 ]
 
 const ASK_EXAMPLES = [
